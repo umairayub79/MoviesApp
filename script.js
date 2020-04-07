@@ -13,14 +13,19 @@ $("#container").pagination({
   locator: "data.movies",
   pageSize: 20,
   totalNumber: 16140,
-  pageNumber:1,
+  pageNumber: 1,
   ajax: {
     beforeSend: function () {
-      $("#movies-container").html("<h1>Loading Movies.....</h1>");
+      $("#movies-container").html(`<div class="loading">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+  </div>`);
     },
   },
   callback: function (data, pagination) {
-    $("#movies-container").html("")
+    $("#movies-container").html("");
     getMovies(data);
   },
 });
