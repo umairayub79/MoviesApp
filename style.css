@@ -20,6 +20,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .movie{
@@ -62,3 +63,15 @@ a:hover{
     text-decoration: none;
     color: rgb(247,119,0);
 }
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.paginationjs-pages ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
