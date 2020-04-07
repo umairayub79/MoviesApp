@@ -1,5 +1,7 @@
 const moviesContainer = document.getElementById("movies-container");
 const URL = "https://yts.mx/api/v2/list_movies.json";
+const SearchForm = document.getElementById("search-form");
+const SearchInput = document.getElementById("search-input");
 let page = 1;
 const observer = window.lozad();
 observer.observe();
@@ -44,6 +46,23 @@ function getMovies(items) {
     createMovieView(item);
   }
 }
+
+function searchMovie(term){
+    fetch(URL + `?query_term=${term}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const movie_count = data.data.movie_count;
+        const movies = data.data.movies;
+        if(movie_count < 1){
+          moviesContainer.innerHTML = `<h4>${movie_count} Results found!</h4>`;
+        }else{
+          moviesContainer.innerHTML = "";
+          getMovies(movies);
+        }
+        
+      });
+
+}
 function createMovieView(movie) {
   const movieView = document.createElement("div");
   movieView.classList.add("movie");
@@ -85,3 +104,10 @@ function createMovieView(movie) {
   }
   moviesContainer.appendChild(movieView);
 }
+
+SearchForm.addEventListener('submit', e =>{
+  e.preventDefault();
+  if(SearchInput.value != ""){
+    searchMovie(SearchInput.value);
+  }
+});

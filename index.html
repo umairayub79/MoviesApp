@@ -14,22 +14,29 @@
     <main class="main">
       <header class="header">
         <h1 class="title">Movies</h1>
+        <form id="search-form" class="search-form">
+          <input id="search-input" type="text" class="search-input" />
+          <button id="search-button" class="search-button">
+            Search
+          </button>
+        </form>
       </header>
       <div id="container">
         <div id="movies-container" class="movies-container">
-      </div>
-        <!-- list items will be appended here -->
+          <!-- list items will be appended here -->
+        </div>
       </div>
     </main>
 
+    <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-
+    <!-- Pagination.js -->
     <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
-    
+
     <script src="./script.js"></script>
   </body>
 </html>
