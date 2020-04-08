@@ -150,6 +150,12 @@ a:hover {
         transform: translateY(-10px);
     }
 }
+.footer{
+    border-top: 2px solid #1DE9B6;
+}
+.footer a{
+    border: none;
+}
 
 @media (max-width: 700px) {
     .search-input {
