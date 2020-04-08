@@ -1,8 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,7 +15,7 @@ body{
 }
 
 
-.search-input{
+.search-input {
     border: 2px solid #1DE9B6;
     width: 400px;
     border-radius: 30px;
@@ -25,7 +25,7 @@ body{
     padding: 10px 10px;
 }
 
-.search-button{
+.search-button {
     border: 2px solid #1DE9B6;
     border-radius: 30px;
     background-color: transparent;
@@ -33,13 +33,24 @@ body{
     font-size: 16px;
     padding: 10px;
 }
-.search-button:hover{
-    color: rgb(247,119,0);
-    border: 2px solid rgb(247,119,0);
+
+.search-button:hover {
+    color: rgb(247, 119, 0);
+    border: 2px solid rgb(247, 119, 0);
     cursor: pointer;
 }
 
-.movies-container{
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+.movies-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -47,7 +58,7 @@ body{
     height: 100%;
 }
 
-.movie{
+.movie {
     border: 3px solid #1DE9B6;
     border-radius: 20px;
     padding: 5px;
@@ -60,21 +71,26 @@ body{
     text-align: center;
     width: 300px;
 }
-.movieInfo{
+
+.movieInfo {
     display: flex;
     flex-direction: row;
 
 }
-.movieCover{
+
+.movieCover {
     width: 200px;
     height: 250px;
     border-radius: 10px;
 }
-.movieRating, .movieYear{
+
+.movieRating,
+.movieYear {
     margin: 5px;
     padding: 5px;
 }
-a{
+
+a {
     margin: 5px;
     padding: 10px;
     border-radius: 50px;
@@ -82,18 +98,15 @@ a{
     text-decoration: none;
     color: #1DE9B6;
 }
-a:hover{
+
+a:hover {
     border: 2px solid rgb(247, 119, 0);
     text-decoration: none;
-    color: rgb(247,119,0);
+    color: rgb(247, 119, 0);
 }
-#container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.paginationjs-pages ul{
+
+
+.paginationjs-pages ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -116,15 +129,18 @@ a:hover{
     animation: jump 0.5s ease-in infinite;
 }
 
-.circle:nth-of-type(2){
+.circle:nth-of-type(2) {
     animation-delay: 0.1s;
 }
-.circle:nth-of-type(3){
+
+.circle:nth-of-type(3) {
     animation-delay: 0.2s;
 }
-.circle:nth-of-type(4){
+
+.circle:nth-of-type(4) {
     animation-delay: 0.3s;
 }
+
 @keyframes jump {
     0% {
         transform: translateY(0);
@@ -133,4 +149,23 @@ a:hover{
     50% {
         transform: translateY(-10px);
     }
+}
+
+@media (max-width: 700px) {
+    .search-input {
+        max-width: 300px;
+    }
+
+    .paginationjs-pages li {
+        margin-top: 40px;
+    }
+    .movie{
+        width: 200px;
+    }
+    .movieCover {
+        width: 150px;
+        height: 200px;
+        border-radius: 10px;
+    }
+    
 }
